@@ -11,10 +11,14 @@
             "id": "af2e9f329c0a2591",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "gen-ai/rag/best-practices.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "best-practices"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "gen-ai/rag/best-practices.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for best-practices"
             }
           },
           {
@@ -162,8 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 384.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,6 +180,33 @@
       "bases:Create new base": false
     }
   },
-  "active": "56aef6c4198bfe1d",
-  "lastOpenFiles": []
+  "active": "af2e9f329c0a2591",
+  "lastOpenFiles": [
+    "gen-ai/rag/hybrid-search.md",
+    "gen-ai/rag/best-practices.md",
+    "gen-ai/rag/caching-strategies.md",
+    "gen-ai/rag/contextual-compression.md",
+    "gen-ai/rag/prompt-patterns.md",
+    "gen-ai/rag/ingestion-patterns.md",
+    "gen-ai/rag/query-patterns.md",
+    "gen-ai/rag/reranking.md",
+    "gen-ai/rag/embedding-models.md",
+    "gen-ai/rag/vector-databases.md",
+    "gen-ai/rag/audit-and-compliance.md",
+    "gen-ai/rag/federated-search.md",
+    "gen-ai/rag/data-freshness.md",
+    "gen-ai/rag/access-control.md",
+    "gen-ai/rag/multi-tenancy.md",
+    "gen-ai/rag/agentic-rag.md",
+    "gen-ai/rag/rag-variants.md",
+    "gen-ai/rag/observability-stack.md",
+    "gen-ai/rag/metadata-filtering.md",
+    "gen-ai/rag/orchestration-layer.md",
+    "gen-ai/rag/query-pipeline.md",
+    "gen-ai/rag/ingestion-pipeline.md",
+    "gen-ai/rag/corrective-rag.md",
+    "gen-ai/rag/graph-rag.md",
+    "gen-ai/rag/raptor.md",
+    "gen-ai/rag/chunking-strategy.md"
+  ]
 }
