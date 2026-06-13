@@ -20,4 +20,9 @@ aliases:
 	- **Long-Context Models(100k-200k tokens)**: Reduce retrieval necessity but don't eliminate need ; "lost in the middle" degradation still present
 
 - Production Considerations
+	- **Latency Budget**: Retrieval 50 - 200ms , retanking 100-500ms, LLM generation 1-5s ;parallelize where possible 
+	- **Cost Structure**: Embeddings  ~$0.01/1M tokens , vector storage ~ 0.10/GB/month, LLM generation domination cost
+	- **Evaluation Harness**: Maintain golden question-answer dataset; automated regression testing on pipeline changes; track answer accuracy, citation accuracy, latency p95
+	- **Fallback Strategy**: Handle no-retrieval-restults, low-confidernce scenarios; explicit "I don't know " responses vs hallucination
+	- **Prompt Injection Defenses**: Delimiter tokens, instruction hierarchy, output validation to prevent retrieval manipulation attacks
 	- 
