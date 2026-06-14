@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gen-ai/agentic-ai/best-practices.md",
+                "file": "gen-ai/hands-on/system-design/reference.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "best-practices"
+              "title": "reference"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gen-ai/agentic-ai/best-practices.md",
+                "file": "gen-ai/hands-on/system-design/reference.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for best-practices"
+              "title": "Backlinks for reference"
             }
           },
           {
@@ -180,33 +180,37 @@
       "bases:Create new base": false
     }
   },
-  "active": "af2e9f329c0a2591",
+  "active": "56aef6c4198bfe1d",
   "lastOpenFiles": [
-    "gen-ai/agentic-ai/error-handling.md",
-    "gen-ai/agentic-ai/best-practices.md",
-    "gen-ai/agentic-ai/tool-integration-patterns.md",
-    "gen-ai/agentic-ai/version-control.md",
-    "gen-ai/agentic-ai/fail-safe-mechanism.md",
-    "gen-ai/agentic-ai/multi-tenancy.md",
-    "gen-ai/agentic-ai/cost-optimization.md",
-    "gen-ai/agentic-ai/architectural-patterns.md",
-    "gen-ai/agentic-ai/guardrails.md",
-    "gen-ai/agentic-ai/event-driven-agentic-ai.md",
-    "gen-ai/agentic-ai/state-management.md",
-    "gen-ai/agentic-ai/execution-runtime.md",
-    "gen-ai/agentic-ai/core-architecture-components.md",
-    "gen-ai/agentic-ai/grounding.md",
-    "gen-ai/agentic-ai/agent-observability.md",
-    "gen-ai/agentic-ai/production-grade-agents.md",
-    "gen-ai/agentic-ai/hierarchical-agents.md",
-    "gen-ai/agentic-ai/tool-learning.md",
-    "gen-ai/agentic-ai/meta-learning.md",
-    "gen-ai/agentic-ai/self-reflection.md",
-    "gen-ai/agentic-ai/agent-orachestration.md",
-    "gen-ai/agentic-ai/multi-agent-systems.md",
-    "gen-ai/agentic-ai/autonomy-levels.md",
-    "gen-ai/agentic-ai/planning.md",
-    "gen-ai/agentic-ai/memory-systems.md",
-    "gen-ai/agentic-ai/agent-loop.md"
+    "gen-ai/hands-on/system-design",
+    "gen-ai/hands-on/agentic-ai/reference.md",
+    "gen-ai/hands-on/system-design/reference.md",
+    "gen-ai/hands-on/agentic-ai/mcp-support.md",
+    "gen-ai/hands-on/agentic-ai/workflow-visualization.md",
+    "gen-ai/hands-on/agentic-ai/multi-agent-collaboration.md",
+    "gen-ai/hands-on/agentic-ai/planner-executor-agent.md",
+    "gen-ai/hands-on/agentic-ai/retry-logic.md",
+    "gen-ai/hands-on/agentic-ai/human-approval.md",
+    "gen-ai/hands-on/agentic-ai/streaming-events.md",
+    "gen-ai/hands-on/agentic-ai/execution-trace.md",
+    "gen-ai/hands-on/agentic-ai/agent-memory.md",
+    "gen-ai/hands-on/agentic-ai/multi-step-reasoning.md",
+    "gen-ai/hands-on/agentic-ai/tool-call.md",
+    "gen-ai/hands-on/agentic-ai/state.md",
+    "gen-ai/hands-on/agentic-ai/api-calls.md",
+    "gen-ai/hands-on/agentic-ai/execute-workflows.md",
+    "gen-ai/hands-on/agentic-ai/use-tools.md",
+    "gen-ai/hands-on/agentic-ai/plan-tasks.md",
+    "gen-ai/hands-on/agentic-ai",
+    "gen-ai/hands-on/enterprise-rag/reference.md",
+    "gen-ai/hands-on/enterprise-rag/observability-dashboard.md",
+    "gen-ai/hands-on/enterprise-rag/prompt-versioning.md",
+    "gen-ai/hands-on/enterprise-rag/evaluation-metrics.md",
+    "gen-ai/hands-on/enterprise-rag/caching.md",
+    "gen-ai/hands-on/enterprise-rag/token-tracking.md",
+    "gen-ai/hands-on/enterprise-rag/hallucination-detection.md",
+    "gen-ai/hands-on/enterprise-rag/Untitled",
+    "gen-ai/hands-on/enterprise-rag",
+    "gen-ai/hands-on"
   ]
 }
