@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "hands-on/system-design/reference.md",
+                "file": "front-end/angular/patterns-plugin-architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "reference"
+              "title": "patterns-plugin-architecture"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 390.5
+    "width": 338.5
   },
   "right": {
     "id": "d8603a7846a9b6be",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "hands-on/system-design/reference.md",
+                "file": "front-end/angular/patterns-plugin-architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for reference"
+              "title": "Backlinks for patterns-plugin-architecture"
             }
           },
           {
@@ -167,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 384.5
+    "width": 515.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,35 +180,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "56aef6c4198bfe1d",
+  "active": "af2e9f329c0a2591",
   "lastOpenFiles": [
+    "front-end/angular/pattern-token-based-feature-flags.md",
+    "front-end/angular/patterns-plugin-architecture.md",
+    "front-end/angular/patterns-facade.md",
+    "front-end/angular/patterns-repository.md",
+    "front-end/angular/patterns-feature-shell.md",
+    "front-end/angular/patterns-destroy-ref.md",
+    "front-end/angular/patterns-app-initializer.md",
+    "front-end/angular/patterns-directive-composition.md",
+    "front-end/angular/patterns-dynamic-component-loading.md",
+    "front-end/angular/patterns-content-projection.md",
+    "front-end/angular/patterns-signal-input.md",
+    "front-end/angular/patterns-smart-dumb.md",
+    "front-end/angular/grpc.md",
+    "front-end/angular/mock-service-worker.md",
+    "front-end/angular/http-interceptors.md",
+    "front-end/angular/bundle-analyzer.md",
+    "front-end/angular/observability-lighthouse.md",
+    "front-end/angular/observability-rum.md",
+    "front-end/angular/observability-sentry.md",
+    "front-end/angular/storybook.md",
+    "front-end/angular/build-devops-tooling.md",
+    "front-end/angular/rxjs.md",
+    "front-end/angular/enterprise-tooling-material-cdk.md",
+    "front-end/angular/enterprise-tooling-cli-nx.md",
+    "front-end/angular/ngrx-platform.md",
+    "front-end/angular/signal-local-vs-global.md",
+    "front-end/angular",
+    "front-end",
     "hands-on/system-design",
-    "hands-on/agentic-ai/reference.md",
-    "hands-on/system-design/reference.md",
-    "hands-on/agentic-ai/mcp-support.md",
-    "hands-on/agentic-ai/workflow-visualization.md",
-    "hands-on/agentic-ai/multi-agent-collaboration.md",
-    "hands-on/agentic-ai/planner-executor-agent.md",
-    "hands-on/agentic-ai/retry-logic.md",
-    "hands-on/agentic-ai/human-approval.md",
-    "hands-on/agentic-ai/streaming-events.md",
-    "hands-on/agentic-ai/execution-trace.md",
-    "hands-on/agentic-ai/agent-memory.md",
-    "hands-on/agentic-ai/multi-step-reasoning.md",
-    "hands-on/agentic-ai/tool-call.md",
-    "hands-on/agentic-ai/state.md",
-    "hands-on/agentic-ai/api-calls.md",
-    "hands-on/agentic-ai/execute-workflows.md",
-    "hands-on/agentic-ai/use-tools.md",
-    "hands-on/agentic-ai/plan-tasks.md",
     "hands-on/agentic-ai",
-    "hands-on/enterprise-rag/reference.md",
-    "hands-on/enterprise-rag/observability-dashboard.md",
-    "hands-on/enterprise-rag/prompt-versioning.md",
-    "hands-on/enterprise-rag/evaluation-metrics.md",
-    "hands-on/enterprise-rag/caching.md",
-    "hands-on/enterprise-rag/token-tracking.md",
-    "hands-on/enterprise-rag/hallucination-detection.md",
     "gen-ai/hands-on/enterprise-rag/Untitled",
     "hands-on/enterprise-rag",
     "hands-on"
