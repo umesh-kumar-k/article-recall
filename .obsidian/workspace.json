@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "front-end/angular/patterns-plugin-architecture.md",
+                "file": "gen-ai/llm/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "patterns-plugin-architecture"
+              "title": "README"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 338.5
+    "width": 389.5
   },
   "right": {
     "id": "d8603a7846a9b6be",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "front-end/angular/patterns-plugin-architecture.md",
+                "file": "gen-ai/llm/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for patterns-plugin-architecture"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -182,8 +182,14 @@
   },
   "active": "af2e9f329c0a2591",
   "lastOpenFiles": [
-    "front-end/angular/pattern-token-based-feature-flags.md",
+    "front-end/angular/README.md",
+    "hands-on/system-design/README.md",
+    "hands-on/enterprise-rag/README.md",
+    "hands-on/agentic-ai/README.md",
+    "gen-ai/README.md",
+    "gen-ai/llm/README.md",
     "front-end/angular/patterns-plugin-architecture.md",
+    "front-end/angular/pattern-token-based-feature-flags.md",
     "front-end/angular/patterns-facade.md",
     "front-end/angular/patterns-repository.md",
     "front-end/angular/patterns-feature-shell.md",
@@ -202,12 +208,6 @@
     "front-end/angular/observability-rum.md",
     "front-end/angular/observability-sentry.md",
     "front-end/angular/storybook.md",
-    "front-end/angular/build-devops-tooling.md",
-    "front-end/angular/rxjs.md",
-    "front-end/angular/enterprise-tooling-material-cdk.md",
-    "front-end/angular/enterprise-tooling-cli-nx.md",
-    "front-end/angular/ngrx-platform.md",
-    "front-end/angular/signal-local-vs-global.md",
     "front-end/angular",
     "front-end",
     "hands-on/system-design",
