@@ -135,3 +135,11 @@
 - Retrieval Cache: Cache query results for frequent/similar queries; semantic similarity for cache hits 
 - LLM Response Cache: Exact or fuzzy matching on (query, context) pairs, GPTCache, Redis-based solutions 
 - Semantic Cache: Vector similarity on query embeddings to return cached responses for semantically similar questions
+
+## Best practices
+
+[reference](best-practices.md) 
+
+## Deployment & Scaling
+
+[reference](deployment-scaling.md) 
