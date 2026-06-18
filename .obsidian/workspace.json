@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2abe26cf53c7f158",
+        "id": "643b3642ac16f821",
         "type": "tabs",
         "children": [
           {
-            "id": "af2e9f329c0a2591",
+            "id": "d990c41d253c2c8c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gen-ai/llm/README.md",
+                "file": "gen-ai/rag/caching-strategies.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "caching-strategies"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 389.5
+    "width": 387.5
   },
   "right": {
     "id": "d8603a7846a9b6be",
@@ -94,17 +94,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gen-ai/llm/README.md",
+                "file": "gen-ai/rag/caching-strategies.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
+                "showSearch": true,
+                "searchQuery": "Query",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for caching-strategies"
             }
           },
           {
@@ -167,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 515.5
+    "width": 328.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,34 +180,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "af2e9f329c0a2591",
+  "active": "d990c41d253c2c8c",
   "lastOpenFiles": [
-    "front-end/angular/README.md",
-    "hands-on/system-design/README.md",
-    "hands-on/enterprise-rag/README.md",
-    "hands-on/agentic-ai/README.md",
-    "gen-ai/README.md",
-    "gen-ai/llm/README.md",
-    "front-end/angular/patterns-plugin-architecture.md",
-    "front-end/angular/pattern-token-based-feature-flags.md",
-    "front-end/angular/patterns-facade.md",
-    "front-end/angular/patterns-repository.md",
-    "front-end/angular/patterns-feature-shell.md",
-    "front-end/angular/patterns-destroy-ref.md",
-    "front-end/angular/patterns-app-initializer.md",
-    "front-end/angular/patterns-directive-composition.md",
-    "front-end/angular/patterns-dynamic-component-loading.md",
-    "front-end/angular/patterns-content-projection.md",
-    "front-end/angular/patterns-signal-input.md",
-    "front-end/angular/patterns-smart-dumb.md",
-    "front-end/angular/grpc.md",
-    "front-end/angular/mock-service-worker.md",
-    "front-end/angular/http-interceptors.md",
-    "front-end/angular/bundle-analyzer.md",
-    "front-end/angular/observability-lighthouse.md",
-    "front-end/angular/observability-rum.md",
-    "front-end/angular/observability-sentry.md",
-    "front-end/angular/storybook.md",
+    "gen-ai/agentic-ai/architectural-patterns.md",
+    "gen-ai/agentic-ai/ai-agents.md",
+    "gen-ai/agentic-ai/agent-orachestration.md",
+    "gen-ai/agentic-ai/agent-observability.md",
+    "gen-ai/agentic-ai/agent-loop.md",
+    "gen-ai/rag/caching-strategies.md",
+    "gen-ai/rag/README.md",
+    "hands-on/enterprise-rag/caching.md",
+    "gen-ai/rag/prompt-patterns.md",
+    "gen-ai/rag/ingestion-patterns.md",
+    "gen-ai/rag/query-patterns.md",
+    "gen-ai/rag/architecture.md",
+    "gen-ai/rag/reranking.md",
+    "gen-ai/rag/embedding-models.md",
+    "gen-ai/rag/semantic-search.md",
+    "gen-ai/rag/vector-databases.md",
+    "gen-ai/rag/self-rag.md",
+    "gen-ai/rag/federated-search.md",
+    "gen-ai/rag/data-freshness.md",
+    "gen-ai/rag/access-control.md",
+    "gen-ai/rag/multi-tenancy.md",
+    "gen-ai/rag/multi-index.md",
+    "gen-ai/rag/advanced-rag-algorithms.md",
+    "gen-ai/rag/ingestion-pipeline.md",
+    "gen-ai/rag/corrective-rag.md",
+    "gen-ai/rag/graph-rag.md",
     "front-end/angular",
     "front-end",
     "hands-on/system-design",
