@@ -3,23 +3,28 @@
 
 ## Fundamentals
 
-- Model Context Protocol : Open standard protocol for enabling LLM  applications to securely connect to external data sources and tools via standardized server - client architecture
+[reference](https://apxml.com/courses/getting-started-model-context-protocol)
+
+- [Model Context Protocol :](mcp.md) Open standard protocol for enabling LLM  applications to securely connect to external data sources and tools via standardized server - client architecture
 - Protocol Philosophy: Separation of concerns where MCP servers expose capabilities (tools, resources, prompts) and MCP clients (AI-apps) consume them without tight coupling
-- Transport Layer: JSON-RPC 2.0 over stdio(local processes) or SSE over HTTP for remote servers; lightweight & language-agnostic
+- [Transport Layer:](transport-layer.md)  JSON-RPC 2.0 over stdio(local processes) or SSE over HTTP for remote servers; lightweight & language-agnostic
 - Server-Client Model: Sservers are stateful processes that maintain context; clients connect, discover capabilities, and invoke them via standardized messages
-- Capability Discovery: Dynamic introspection allows clients to enumerate available tools, resources & prompts without hardcoded knowledge
-- Context Management: Servers maintain session state, handle authentication and manage connections to underlying data sources independent of client lifecycle
+- [Capability Discovery:](capability-discovery.md)  Dynamic introspection allows clients to enumerate available tools, resources & prompts without hardcoded knowledge
+- [Context Management:](context-management.md) Servers maintain session state, handle authentication and manage connections to underlying data sources independent of client lifecycle
 
 # Core Primitives
 
 ## Resources
 
-- Resouces: Read only data sources(files,databases,APIs) exposed as URIs with MIME types; analogous to RESTful resources but optimized for LLM consumption
-- Resource Templates: URI patterns with variables enabling dynamic resource addressing(eg db://tables/{table}/rows/{id})
+- [Resouces:](resources.md)  Read only data sources(files,databases,APIs) exposed as URIs with MIME types; analogous to RESTful resources but optimized for LLM consumption
+- [Resource Templates:](resource-templates.md)  URI patterns with variables enabling dynamic resource addressing(eg db://tables/{table}/rows/{id})
 - Resource Subscriptions: Client can subscribe to resource changes; server pushes updates via notifications; enables real-time data integration
 - Resource Lists: Pagination support for large resource sets; servers return cursors for efficient traversal
 
 ## Tools
+
+[reference](tools.md) 
+
 - Tools:Executable functions that mutate state or interact with external systems; exposed with JSON schemas defining inputs/outputs
 - Tool Discovery: Clients enumerate available tools at runtime; servers describe capabilities, required parameters, and expected behaviours
 - Tool Execution: Synchronous request-response for tool invocation; servers handle authentication, validation, and execution sandboxing
@@ -31,11 +36,12 @@
 - Prompt Discovery: Clients can list & inspect available prompts; facilitates prompt marketplaces and centralized prompt management
 
 ## Advanced Concepts
-- Sampling: MCP servers can request LLM completions from clients;enables agentic servers that use LLM reasoning internally.
-- Roots Protocol: Server advertises writable filesystem roots for file operations; enables code generation and document management workflows
-- Progress Tracking: Long running operations report incremental progress via notifications; improves UX for time consuming tool executions
-- Cancellation: Client can cancel in-flight requests; servers implement graceful shutdown and resource cleanup
-- Multi-Server OrchestrationL Clients can connect to multiple MCP servers simultaneously; aggregate capabilities from diverse sources(databases,APIs,local files)
+
+- [Sampling:](sampling.md)  MCP servers can request LLM completions from clients;enables agentic servers that use LLM reasoning internally.
+- [Roots Protocol:](roots-protocol.md)  Server advertises writable filesystem roots for file operations; enables code generation and document management workflows
+- [Progress Tracking:](progress-tracking.md) Long running operations report incremental progress via notifications; improves UX for time consuming tool executions
+- [Cancellation:](cancellation.md) Client can cancel in-flight requests; servers implement graceful shutdown and resource cleanup
+- [Multi-Server Orchestration:](orchestration.md)  Clients can connect to multiple MCP servers simultaneously; aggregate capabilities from diverse sources(databases,APIs,local files)
 - Security Boundaries: Each MCP server operates in isolated context with scoped permissions; client-side authorization determines which servers to trust
 - Logging & Observability: Serves emit structured logs consumed by clients for debuggin; distinct from application logs for compliance/audit
 

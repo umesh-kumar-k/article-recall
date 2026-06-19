@@ -48,3 +48,36 @@
 - Debate/Critique: Agents argue different perspectives or critiques each other's ouputs; surfaces edge cases & improves reasoning
 - Human-in-the-Loop(HITL): Agent pauses for approval at critical decision points(financial transactions, data deletion); balances autonomy & control
 - Swarm Intelligence: Large number of simple agents with local rules creating emergent collective behaviour experimental for optimization problems
+
+### Enterprise Considerations
+
+- Governance Framework: Define agent capabilities , approval workflows & escalation paths; critical for regulated industries (finance, healthcaare)
+- Audit Trail: Immutable logs of agent reasoning, tool calls & data accessed;required for compliance (SOX,GDPR, HIPAA)
+- [Cost Controls:](cost-control.md)  Per agent budgets (API Call limits,compute quotas), cost attribution to business units,anomaly detection for runaway agents
+- Access Control: Fine-grained permissions for tools/data per agent; integrate with enterprise IAM (LDAP,OAuth, SAML)
+- [Multi-Tenancy:](multi-tenancy.md)  Logical isolation via agent namespaces or physical isolation via dedicated instances; prevents cross-tenant data leakage
+- [Fail-Safe mechanisms:](fail-safe-mechanism.md)  Circuit breakers, max iteration limits, tool execution timeouts, deadlock detection to prevent infinite loops
+- [Version Control:](version-control.md)  Agent definition versioning(prompt templates,tool schemas, policies) with rollback capability, enables safe iteration
+
+
+## Design Patterns & Architectural Style
+
+### Tool Integration Patterns
+
+[reference](tool-integration-patterns.md) 
+
+- Static Tool Registry: Predefined tool catalog with schemas; agent selects from fixed set but requires updates for new tools
+- Dynamic Tool Discovery: Agent queries tool catalog at runtime based on task needs; flexible but risks irrelevant tool selection
+- Tool Chaining: Output of one tool becomes input to another; enables complex workflows from simple atomic tools
+- Retry with Fallback: Primary tool failure triggers alternative tool or degraded functionality; improves robustness
+- Validation Wrappers: Pre/post conditions checked before/after tool execution; prevents invalid states & improves reliability 
+
+### Error Handling & Recovery
+
+[reference](error-handling.md) 
+
+- Exponential Backoff:  Retry failed tool calls with increasing delays; handles transient API failures
+- Circuit Breaker: Stop calling failing tools after threshold; prevents cascading failures
+- Graceful Degradation: Fall back to simpler capability when advanced features unavailable; maintains partial functionality
+- Compensation Actions: Undo/rollback mechanisms for failed multi step workflows; ensures consistency
+- Human Escalation: Transfer to human operator when agent confidence below threshold or critical error occur

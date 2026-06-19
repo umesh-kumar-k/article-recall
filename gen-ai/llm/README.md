@@ -8,7 +8,7 @@
 		- Top-P/Top-K Sampling: Nuclues sampling strategies that constrin token selection space; tune for quality vs diversity trade-off
 		- Hallucination: Model generates plausible but factually incorrect output; a structural risk, not a bug - architecture must compensate via grounding and verification
 		- Emerging Capabilities: Larger models exhibit skills not explicity trained for (reasoning,code gen); capability thresholds vary by model size & training date.
-		- Multimodal Models: Models accepting text + image/audio/video(GPT-4o, Gemini); explanding input modalities changes integration architecture significantly.
+		- Multimodal Models: Models accepting text + image/audio/video(GPT-4o, Gemini); expanding input modalities changes integration architecture significantly.
 	
 	2. Model Types & Selection
 		- Frontier Models (Closed-Source): GPT-4o, Claude 3.5, Gemini 2.5 - highest capability, API -only , vendor lock-in-risk, per-token pricing at scale becomes expensive.

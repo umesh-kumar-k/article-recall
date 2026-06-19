@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gen-ai/agentic-ai/README.md",
+                "file": "front-end/angular/README.md",
                 "mode": "source",
                 "source": false
               },
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 315.5
+    "width": 374.5
   },
   "right": {
     "id": "d8603a7846a9b6be",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gen-ai/agentic-ai/README.md",
+                "file": "front-end/angular/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -167,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 339.5
+    "width": 347.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,32 +182,32 @@
   },
   "active": "03ee30d8363f6113",
   "lastOpenFiles": [
-    "gen-ai/agentic-ai/architectural-patterns.md",
-    "gen-ai/agentic-ai/README.md",
+    "front-end/angular/observability-sentry.md",
+    "front-end/angular/README.md",
+    "hands-on/enterprise-rag/README.md",
+    "hands-on/enterprise-rag/prompt-versioning.md",
+    "hands-on/enterprise-rag/role-based-access.md",
+    "hands-on/agentic-ai/api-calls.md",
+    "hands-on/agentic-ai/execution-trace.md",
+    "hands-on/agentic-ai/human-approval.md",
+    "hands-on/agentic-ai/mcp-support.md",
+    "hands-on/agentic-ai/multi-step-reasoning.md",
+    "hands-on/agentic-ai/plan-tasks.md",
+    "hands-on/agentic-ai/README.md",
     "gen-ai/llm/README.md",
-    "gen-ai/agentic-ai/guardrails.md",
-    "gen-ai/agentic-ai/message-broker.md",
-    "message-broker.md",
-    "gen-ai/agentic-ai/state-management.md",
-    "gen-ai/agentic-ai/execution-runtime.md",
-    "gen-ai/agentic-ai/grounding.md",
-    "gen-ai/agentic-ai/agent-observability.md",
-    "gen-ai/agentic-ai/production-grade-agents.md",
-    "gen-ai/agentic-ai/tool-learning.md",
-    "gen-ai/agentic-ai/meta-learning.md",
-    "gen-ai/agentic-ai/self-reflection.md",
-    "gen-ai/agentic-ai/agent-orchestration.md",
-    "agent-orchestration.md",
-    "gen-ai/agentic-ai/multi-agent-systems.md",
-    "gen-ai/agentic-ai/autonomy-levels.md",
-    "gen-ai/agentic-ai/planning.md",
-    "gen-ai/agentic-ai/memory-systems.md",
-    "memory-system.md",
-    "gen-ai/agentic-ai/agent-loop.md",
-    "gen-ai/agentic-ai/react-pattern.md",
-    "gen-ai/agentic-ai/tool-calling.md",
-    "gen-ai/agentic-ai/ai-agents.md",
-    "gen-ai/agentic-ai/overview.md",
+    "gen-ai/llm/system-prompt.md",
+    "gen-ai/llm/embedding-models.md",
+    "gen-ai/llm/small-lang-models.md",
+    "gen-ai/llm/open-weight-models.md",
+    "gen-ai/llm/frontier-models.md",
+    "gen-ai/llm/parameters.md",
+    "gen-ai/llm/emergent-capabilities.md",
+    "gen-ai/llm/hallucination.md",
+    "gen-ai/llm/temperature.md",
+    "gen-ai/agentic-ai/README.md",
+    "gen-ai/llm/attention-mechanism.md",
+    "gen-ai/mcp/README.md",
+    "gen-ai/mcp/orchestration.md",
     "front-end/angular",
     "front-end",
     "hands-on/system-design",
