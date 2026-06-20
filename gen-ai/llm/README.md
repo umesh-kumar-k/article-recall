@@ -70,10 +70,10 @@
 ## LLMOps - Operating LLMs in Production
 
 1. [LLMOps vs MLOps:](llmops-mlops)  MLOps focuses on model training pipelines; LLMOps focuses on prompt management, inference infrastructure , eval pipelines and output monitoring.
-2. Model versioning: LLM API provides silently update models; pin model versions in production(gpt-4o-2024-08-06) to prevent behaviour drift.
-3. Inference Optomization: vLLM,TGI(Text Generation Inference), TensorRT-LLM - production serving frameworks with continuous batching, KV cache management, quanitization.
-4. Quantization: Reducing model weight precision(FP 16 -> INT8/INT4) to lower GPU memory footprint; trade-off between model size & output quality.
-5. KV CacheL Reusing computed attention state for common propmt prefixes; architectural feature of inference servers that reduces latency on repeated system propmts;
+2. [Model versioning:](model-versioning.md) LLM API provides silently update models; pin model versions in production(gpt-4o-2024-08-06) to prevent behaviour drift.
+3. [Inference Optimization:](inference-optimization.md)  vLLM,TGI(Text Generation Inference), TensorRT-LLM - production serving frameworks with continuous batching, KV cache management, quanitization.
+4. [Quantization:](quantization.md)  Reducing model weight precision(FP 16 -> INT8/INT4) to lower GPU memory footprint; trade-off between model size & output quality.
+5. [KV Cache:](kv-cache.md) Reusing computed attention state for common propmt prefixes; architectural feature of inference servers that reduces latency on repeated system propmts;
 6. Model Serving Platforms: Triton Inference Server, BentoML, Ray Serve, Modal - manage model lifecycle, auto-scaling, and multi-model serving in production.
 7. Cost Attribution: Token usage per user/feature/team; essential for enterprise biling, quota management & identifying runaway pipelines.
 8. Prompt/Response Logging Pipeline: PII srubbling, audit trails, and compliance logging for regulated industries; must be designed before go-live.
@@ -92,16 +92,16 @@
 
 ## Vector Databases & Embeddings (Beyond RAG)
 
-1. Embedding Use Cases Beyond Search: Classification, clustering, anomoly detection, duplicate detection, recommendation - embeddings are a general purpose semantic representation layer.
+1. [Embedding Use Cases Beyond Search: ](vectordb-embedding.md)  Classification, clustering, anomoly detection, duplicate detection, recommendation - embeddings are a general purpose semantic representation layer.
 2. Vector DB Options: Pinecone(managed, simple), Weaviate(multi-model, graph features),Qdrant(high-performance,self hostable),pgvector(Postgres extension, reduces stack complexity)
-3. Indexing Algorithms: HNSW(high recall, high memory), IVF (lower memory, approximate), Flat(exact, slow at scale) - choose based on dataset size & recall requirements.
-4. Embedding Versiononing: Changing the embedding model invalidates all stored vectors; requires full re-indexing - treat as a schema  migration event.
-5. Hybrid Storage Architecture: Pairing vector DB with a relational/document store - vectors for semantic lookup, structured DB for metadata filtering, joins and ACID transactions.
-6. Multi-Tenancy in Vector DBs: Namespace or collection per tenant vs metadata filtering - namespace isolation is safer for compliance , filtering is more cost -efficient
+3. [Indexing Algorithms:](vectordb-indexing.md)  HNSW(high recall, high memory), IVF (lower memory, approximate), Flat(exact, slow at scale) - choose based on dataset size & recall requirements.
+4. [Embedding Versiononing:](vectordb-embedding-versioning.md)  Changing the embedding model invalidates all stored vectors; requires full re-indexing - treat as a schema  migration event.
+5. [Hybrid Storage Architecture:](vectordb-hybrid-search.md) Pairing vector DB with a relational/document store - vectors for semantic lookup, structured DB for metadata filtering, joins and ACID transactions.
+6. [Multi-Tenancy in Vector DBs:](vectordb-multi-tenancy.md)  Namespace or collection per tenant vs metadata filtering - namespace isolation is safer for compliance , filtering is more cost -efficient
 
 ## Structured Data & LLM Integration
 
-1. Text to SQL: LLM translates natural language to SQL queries against relational databases; requires schema context injection and validation before execution
+1. [Text to SQL:](text-to-sql.md)  LLM translates natural language to SQL queries against relational databases; requires schema context injection and validation before execution
 2. Function Calling/Tool Use: LLMs output structured calls to predefined functions/APIs instead free text; backbone of agent & workflow automation patterns.
 3. Structured Extraction: Using LLMs to extract typed entities from unstructured documents(contracts, emails, PDFs ); paired with schema validation(Pydantic,Zod)
 4. Semantic Layer: Mapping business terminology to data model concepts enabling LLMs to query enterprise data without exposing raw schema - emerging pattern in enterprise BI

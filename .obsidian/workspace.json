@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "hands-on/system-design/ticket-booking-reservation.md",
+                "file": "gen-ai/llm/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ticket-booking-reservation"
+              "title": "README"
             }
           }
         ],
@@ -121,7 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 438.5
+    "width": 364.5
   },
   "right": {
     "id": "d8603a7846a9b6be",
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "hands-on/system-design/ticket-booking-reservation.md",
+                "file": "gen-ai/llm/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ticket-booking-reservation"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -210,7 +210,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5
+    "width": 360.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -223,11 +223,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "f6627017e14066d2",
+  "active": "56aef6c4198bfe1d",
   "lastOpenFiles": [
-    "hands-on/system-design/README.md",
-    "hands-on/system-design/ticket-booking-reservation.md",
+    "gen-ai/llm/text-to-sql.md",
     "gen-ai/llm/README.md",
+    "gen-ai/llm/vectordb-multi-tenancy.md",
+    "gen-ai/llm/vectordb-hybrid-search.md",
+    "hands-on/system-design/dual-write-problem.md",
+    "gen-ai/llm/vectordb-embedding-versioning.md",
+    "gen-ai/llm/vectordb-indexing.md",
+    "gen-ai/llm/vectordb-embedding.md",
+    "gen-ai/llm/kv-cache.md",
+    "gen-ai/llm/quantization.md",
+    "gen-ai/llm/inference-optimization.md",
+    "gen-ai/llm/model-versioning.md",
+    "hands-on/system-design/ticket-booking-reservation.md",
+    "hands-on/system-design/README.md",
     "gen-ai/llm/rlhf.md",
     "gen-ai/llm/llmops-mlops.md",
     "gen-ai/llm/context-managent.md",
@@ -240,17 +251,6 @@
     "gen-ai/llm/ragas-trulens.md",
     "gen-ai/llm/evaluation-metrics.md",
     "gen-ai/llm/evaluation.md",
-    "gen-ai/llm/system-prompt.md",
-    "gen-ai/llm/frontier-models.md",
-    "gen-ai/llm/model-merging.md",
-    "gen-ai/llm/catrastophic-forgetting.md",
-    "gen-ai/llm/dpo.md",
-    "gen-ai/llm/hallucination.md",
-    "gen-ai/llm/lora-qlora.md",
-    "gen-ai/llm/supervised-fine-tuning.md",
-    "gen-ai/llm/fine-tuning.md",
-    "gen-ai/llm/meta-prompting.md",
-    "gen-ai/llm/prompt-versioning.md",
     "front-end/angular",
     "front-end",
     "hands-on/system-design",
