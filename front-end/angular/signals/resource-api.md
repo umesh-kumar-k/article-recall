@@ -3,7 +3,311 @@ aliases:
   - Asynchronous Data Flow with Angular’s new Resource API
 Source 1: https://www.angulararchitects.io/blog/asynchronous-resources-with-angulars-new-resource-api/
 Source 2: https://www.angularspace.com/everything-you-need-to-know-abour-resource-for-now/
+Source 3: https://www.angulararchitects.io/en/blog/using-the-resource-api-with-the-ngrx-signal-store/
 ---
+# Using Angular's Resource API with the NGRX Signal Store
+
+## Reactive Flow
+* **Key Points:**
+  - With version 19, NgRx introduced the withProps feature that allows us to add arbitrary properties to the Store. With this feature, the Store can, for instance, define central services, Observables, or Resources.
+  - This article shows how to use withProps to leverage the new Resource API inside a Signal Store. This allows the Store to provide the usual reactive behavior and to prevent race conditions without RxJS. For connecting a template-driven form to the Store, the example is using linkedSignal together with the Signal Store's new signalMethod helper.
+  - The filters -- Original Name, and English Name -- trigger the reactive flow, resulting in the displayed rated desserts. Also, clicking the shown button makes the store to load ratings for the currently shown desserts.
+  - As we see here, the Store can receive the consumer's (e.g., the Component's) intention via the three methods displayed on the left. The filter Signal triggers the dessertsResource: Every time it's changed, the resource loads desserts. The ratingsResource is directly triggered by the loadRatings method, and the updateRatings method updates this Resource's local working copy. Another method not shown here could write back this working copy to the backend.
+* **Technical Entities (Classes/Functions/APIs):** `withProps`, `Resource API`, `linkedSignal`, `signalMethod`
+
+## Consumer's Perspective
+* **Key Points:**
+  - Now, let's have a look at the Store's external view by investigating the component that consumes it.
+  - As the example binds the filter, originalName and englishName, to a template-driven form, the Component wraps them in Linked Signals. This allows it to use ngModel with a two-way binding.
+  - In this case, the two-way binding updates the local working copy provided by the Linked Signal. To ensure this working copy is sent back to the Store, the constructor passes it to the Store's updateFilter method.
+  - It's essential to see that updateFilter does not just receive the current filter but a computed linkedFilter Signal. As we will see below, this method is a so-called Signal Method that runs every time the passed signal changes. This allows the example of keeping the filter in the store up to date.
+  - Admittedly, a reactive Form would make it easier to synchronize the form with the Store.
+* **Technical Entities (Classes/Functions/APIs):** `linkedSignal`, `signalMethod`, `ngModel`
+* **Code Snippet:**
+```typescript
+@Component([...])
+export class DessertsComponent {
+  #store = inject(DessertStore);
+
+  originalName = linkedSignal(() => this.#store.filter.originalName());
+  englishName = linkedSignal(() => this.#store.filter.englishName());
+
+  ratedDesserts = this.#store.ratedDesserts;
+  loading = this.#store.loading;
+
+  #linkedFilter = computed(() => ({
+    originalName: this.originalName(),
+    englishName: this.englishName()
+  }));
+
+  constructor() {
+    this.#store.updateFilter(this.#linkedFilter)
+  }
+
+  loadRatings(): void {
+    this.#store.loadRatings();
+  }
+
+  updateRating(id: number, rating: number): void {
+    this.#store.updateRating(id, rating);
+  }
+}
+```
+
+## The Store
+* **Key Points:**
+  - If we look at the Store's internal view, we see that the state represents the filter.
+  - Properties for the loaded desserts and ratings are missing here. The below-discussed Resources provide them. Also, the loading state can be derived from them. As we don't have parameters for loading the ratings, just a flag ratingsRequested is used.
+* **Technical Entities (Classes/Functions/APIs):** `signalStore`, `withState`, `Resource`
+* **Code Snippet:**
+```typescript
+export type Requested = undefined | true;
+
+export const DessertStore = signalStore(
+  { providedIn: 'root' },
+  withState({
+    filter: {
+      originalName: '',
+      englishName: 'Cake',
+    },
+    ratingsRequested: undefined as Requested
+  }),
+ [...],
+);
+```
+
+## Getting Services via withProps
+* **Key Points:**
+  - The next feature added to the Store is withProps. The Store uses it to inject services we need later for setting up Resources and methods.
+  - This streamlines the Store's implementation a bit. Before we got withProps, such services had to be injected into parameters added to the individual features. As this resulted in long parameter lists and needed to be repeated for different features the same service was used in, leveraging withProps for this task seems more fitting.
+  - Please also note that the property names introduced here start with an underscore. By convention, the Signal Store considers such properties as private and does not expose them to the consumer.
+* **Technical Entities (Classes/Functions/APIs):** `withProps`, `inject`
+* **Code Snippet:**
+```typescript
+export const DessertStore = signalStore(
+  [...],
+  withProps(() => ({
+    _dessertService: inject(DessertService),
+    _ratingService: inject(RatingService),
+    _toastService: inject(ToastService),
+  })),
+  [...],
+);
+```
+
+## Setting up Resources
+* **Key Points:**
+  - For setting up the Resources, the Store uses another withProps section.
+  - As the withProps section with the Resources is defined after the one with the services, the Resources can access these services. The _dessertsResource uses the filter in the Store's state as its params. Hence, a change to the filter triggers loading desserts.
+* **Technical Entities (Classes/Functions/APIs):** `withProps`, `resource`
+* **Code Snippet:**
+```typescript
+export const DessertStore = signalStore(
+  [...],
+  withProps((store) => ({
+    _dessertsResource: resource({
+      params: store.filter,
+      loader: (loaderParams) => {
+        const filter = loaderParams.params;
+        const abortSignal = params.abortSignal;
+        return store._dessertService.findPromise(filter, abortSignal);
+      },
+    }),
+    _ratingsResource: resource({
+      params: store.ratingsRequested
+      loader: (loaderParams) => {
+        const abortSignal = loaderParams.abortSignal;
+        return store._ratingService.loadExpertRatingsPromise(abortSignal);
+      }
+    })
+  })),
+  [...],
+);
+```
+
+## Optional: Exposing Read-Only Resources
+* **Key Points:**
+  - Like the injected services, the Resources discussed in the previous section are marked as private. In this example, they are just an implementation detail: The consumer does not care whether the data is loaded via the Resource API, RxJS, or in a different way.
+  - However, if we wanted to provide the Resources to the consumer, we could add another withProps section exposing read-only versions of them.
+  - A read-only resource provides the loaded data, the loading state, and error information but does not allow updating of the local working copy. This idea of defining private resources that are exposed as public read-only resources might be automated by a custom feature like withResource.
+* **Technical Entities (Classes/Functions/APIs):** `withProps`, `asReadonly()`
+* **Code Snippet:**
+```typescript
+export const DessertStore = signalStore(
+  [...],
+  withProps((store) => ({
+    dessertsResource: store._dessertsResource.asReadonly(),
+    ratingsResource: store._ratingsResource.asReadonly(),
+  })),
+  [...],
+);
+```
+
+## Deriving View Models
+* **Key Points:**
+  - To derive view models that are displayed via data binding, the Store introduces some computed Signals.
+  - The helper function toRated (not shown here) combines the desserts with the loaded ratings. The loading Signal returns true when one of the resources is in a loading state.
+* **Technical Entities (Classes/Functions/APIs):** `withComputed`, `computed`
+* **Code Snippet:**
+```typescript
+export const DessertStore = signalStore(
+  [...],
+  withComputed((store) => ({
+    ratedDesserts: computed(() => toRated(
+      store._dessertsResource.value(),
+      store._ratingsResource.value()
+    )),
+    loading: computed(() =>
+      store._dessertsResource.isLoading()
+        || store._dessertsResource.isLoading())
+  })),
+  [...]
+);
+```
+
+## Providing Methods
+* **Key Points:**
+  - As the Resource API gives us a reactive and hence a declarative way for loading data, there is not much imperative code left for the methods.
+  - These methods mainly write the passed values into the Store. The method updateFilter is set up with the new signalMethod helper. As the example is using signalMethod<DessertFilter>, the method takes a DessertFilter or a Signal<DessertFilter>. In the latter case, the defined method runs every time the passed Signal changes.
+  - While the passed Signal is tracked, the method's implementation is untracked (!) by convention. Hence, it is not re-executed when a Signal in one of the called methods is changing. Usually, this behavior is desirable as it allows us to see at first glance when the method's implementation runs.
+  - The helper signalMethod is similar to rxMethod, already introduced with the initial version of the Signal Store. However, signalMethod does not rely on RxJS. This also means we need to take care of preventing race conditions by ourselves. In the example shown here, this task is handled by the Resource API.
+  - The loadRatings method triggers the _ratingsResource by setting the flag ratingsRequested to true and calling reload. This approach has already been discussed here. The method updateRating updates the Resource's local working copy. I admit, this feels a bit strange because a store usually does not directly modify writable signals. However, this aligns with the idea of local working copies provided by linkedSignal and the Resource API: Directly updating temporary data inside the reactive flow. Perhaps we will find a more streamlined way to accomplish this task.
+* **Technical Entities (Classes/Functions/APIs):** `withMethods`, `signalMethod`, `patchState`, `reload()`, `update()`
+* **Code Snippet:**
+```typescript
+export const DessertStore = signalStore(
+  [...],
+  withMethods((store) => ({
+    updateFilter: signalMethod<DessertFilter>((filter) => {
+      patchState(store, { filter });
+    }),
+    loadRatings: () => {
+        patchState(store, { ratingsRequested: true });
+        store._ratingsResource.reload();
+    },
+    updateRating: (id: number, rating: number) => {
+      store._ratingsResource.update(ratings => ({
+        ...ratings,
+        [id]: rating,
+      }));
+    },
+  })),
+  [...],
+);
+```
+
+## Error Handling with Hooks and Effects
+* **Key Points:**
+  - If loading data does not work, the Resource informs about the current situation via its error Signal. To display a respective toast message, the Store sets up an onInit hook with an Effect tracking the error.
+  - The method getMessage returns an error message derived from the error object.
+  - To make it easy to repeat this task for further error Signals, we could move the Effect into a helper function.
+  - This helper function takes the errorSignal and the toastService and sets up the Effect shown before.
+* **Technical Entities (Classes/Functions/APIs):** `withHooks`, `effect`, `onInit`
+* **Code Snippet:**
+```typescript
+export const DessertStore = signalStore(
+ [...],
+  withHooks({
+    onInit(store) {
+      const toastService = store._toastService;
+      const dessertsError = store._dessertsResource.error;
+
+      effect(() => {
+        const error = store._dessertsResource.error;
+        if (error) {
+          store._toastService.show('Error: ' + getMessage(error));
+        }
+      });
+    }
+  })
+);
+```
+
+## Everything Together
+* **Key Points:**
+  - Now, that we've discussed all the sections of a Signal Store utilizing the Resource API, let's have a look at the full store implementation.
+* **Technical Entities (Classes/Functions/APIs):** `signalStore`, `withState`, `withProps`, `withComputed`, `withMethods`, `withHooks`, `resource`, `signalMethod`
+* **Code Snippet:**
+```typescript
+export const DessertStore = signalStore(
+  { providedIn: "root" },
+  withState({
+    filter: {
+      originalName: "",
+      englishName: "Cake",
+    },
+  }),
+  withProps(() => ({
+    _dessertService: inject(DessertService),
+    _ratingService: inject(RatingService),
+    _toastService: inject(ToastService),
+  })),
+  withProps((store) => ({
+    _dessertsResource: resource({
+      request: Store.filter,
+      loader: (params) => {
+        const filter = params.request;
+        const abortSignal = params.abortSignal;
+        return store._dessertService.findPromise(filter, abortSignal);
+      },
+    }),
+    _ratingsResource: resource({
+      loader: (params) => {
+        const abortSignal = params.abortSignal;
+        return store._ratingService.loadExpertRatingsPromise(abortSignal);
+      },
+    }),
+  })),
+  withProps((store) => ({
+    dessertsResource: store._dessertsResource.asReadonly(),
+    ratingsResource: store._ratingsResource.asReadonly(),
+  })),
+  withComputed((store) => ({
+    ratedDesserts: computed(() =>
+      toRated(store._dessertsResource.value(), store._ratingsResource.value())
+    ),
+    loading: computed(
+      () =>
+        store._dessertsResource.isLoading() ||
+        store._dessertsResource.isLoading()
+    ),
+  })),
+  withMethods((store) => ({
+    updateFilter: signalMethod<DessertFilter>((filter) => {
+      patchState(store, { filter });
+    }),
+    loadRatings: () => {
+      store._ratingsResource.reload();
+    },
+    updateRating: (id: number, rating: number) => {
+      store._ratingsResource.update((ratings) => ({
+        ...ratings,
+        [id]: rating,
+      }));
+    },
+  })),
+  withHooks({
+    onInit(store) {
+      const toastService = store._toastService;
+      const dessertsError = store._dessertsResource.error;
+      const ratingsError = store._ratingsResource.error;
+
+      displayErrorEffect(dessertsError, toastService);
+      displayErrorEffect(ratingsError, toastService);
+    },
+  })
+);
+```
+
+## Discussion and Outlook
+* **Key Points:**
+  - Thanks to withProps introduced with NgRx 19, a Signal Store can define arbitrary properties. This streamlines working with injected services and allows setting up Resources. The store can use such Resources as implementation details or expose them to the consumer. In the latter case, the Resource should be made read-only for the outside.
+  - Directly using the Resource API inside a Signal Store allows us to define a reactive dataflow fully using Angular's Signal API. The new signalMethod helper can be used to connect signals to the Store.
+  - As a Resource provides a local working copy of the loaded data, it can be overwritten with updates provided by the user before it is sent back to the server. Directly updating this working copy feels a bit strange, as usually, the Store does not directly modify writable Signals. However, as discussed above, temporarily updating data inside the reactive graph is part of the idea behind such working copies. Perhaps the community eventually finds a better way to accomplish this task. Also, there might be some value in a withResource feature for defining a private Resource exposed as read-only.
+
+---
+
+
 
 # Everything about v19 Resource API (for now)
 

@@ -41,17 +41,17 @@
 ## State Management Architecture
 
 - Signal Store
-	- NgRx Signal Store
+	- [NgRx Signal Store](ngrx/signal-store.md) 
 	- Entities Feature
 	- Local vs GLobal Signal Store
 	- patchState() Immutability
 
-- NgRx Platform (Enterprise Standard)
-	- Store as Single Source of Truth
-	- Selectors as Memoized Projections
-	- Effects for Side Effect Isolation
+- [NgRx Platform (Enterprise Standard)](ngrx/summary.md) 
+	- [Store as Single Source of Truth](ngrx/store.md) 
+	- [Selectors as Memoized Projections](ngrx/selectors.md) 
+	- [Effects for Side Effect Isolation](ngrx/effects.md) 
 	- Entity Adapter
-	- Router Store
+	- [Router Store](ngrx/router-store.md) 
 	- Action Hygiene
 	- Facade Pattern
 
@@ -63,8 +63,8 @@
 ## Enterprise Ecosystem & Tooling
 
 - Core Enterprise Stack with Angular
-	- Angular CLI + Nx
-	- Angular Material + CDK:
+	- [Angular CLI + Nx](enterprise-tooling-cli-nx.md) 
+	- [Angular Material + CDK:](enterprise-tooling-material-cdk.md) 
 	- PrimeNG / AG Grid:
 	- NgRx Ecosystem
 	- RxJS
