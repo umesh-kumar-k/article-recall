@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "front-end/angular/enterprise-tooling-material-cdk.md",
+                "file": "hands-on/system-design/ticket-booking/claude.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "enterprise-tooling-material-cdk"
+              "title": "claude"
             }
           }
         ],
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "front-end/angular/enterprise-tooling-material-cdk.md",
+                "file": "hands-on/system-design/ticket-booking/claude.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for enterprise-tooling-material-cdk"
+              "title": "Backlinks for claude"
             }
           },
           {
@@ -211,8 +211,10 @@
   },
   "active": "90a1a137a11cd7f4",
   "lastOpenFiles": [
-    "front-end/angular/README.md",
+    "hands-on/system-design/ticket-booking/deepseek.md",
+    "hands-on/system-design/ticket-booking/claude.md",
     "front-end/angular/enterprise-tooling-material-cdk.md",
+    "front-end/angular/README.md",
     "front-end/angular/enterprise-tooling-cli-nx.md",
     "front-end/angular/ngrx/router-store.md",
     "front-end/angular/signals/resource-api.md",
@@ -236,8 +238,6 @@
     "front-end/angular/typed-forms.md",
     "front-end/angular/forms-architecture.md",
     "front-end/angular/routing-architecture.md",
-    "front-end/angular/async-pipe.md",
-    "front-end/angular/ngzone-run-outside-angular.md",
     "front-end/angular/signals",
     "front-end/angular/change-detection",
     "front-end/angular",
