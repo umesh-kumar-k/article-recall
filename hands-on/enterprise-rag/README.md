@@ -10,6 +10,7 @@
 - [Chunking](chunking-advanced.md) 
 - [Embeddings](embeddings.md)
 - [Vector Search](vector-search.md) 
+- [PG Vector Store](pg-vector-store.md)
 - [Citations](citations.md) 
 - [Conversation Memory](conversation-memory.md) 
 - [Streaming Answers](streaming-answers.md) 
@@ -19,7 +20,7 @@
 ## Must Have Features
 
 - [Hybrid Search](hybrid-search.md) 
-- [Metadata Filtering](metadada-filtering.md) 
+- [Metadata Filtering](metadata-filtering.md) 
 - Conversational History
 - Multi Document Support
 - Source Citation UI
