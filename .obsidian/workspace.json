@@ -4,30 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "9fab98c41df94f8c",
+        "id": "f3d2bf999368e302",
         "type": "tabs",
         "children": [
           {
-            "id": "6866b776ee0038cd",
+            "id": "86e8c4db04aea742",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "hands-on/enterprise-rag/embeddings.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "embeddings"
-            }
-          },
-          {
-            "id": "97e28f877ea6c245",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
+                "file": "hands-on/agentic-ai/README.md",
                 "mode": "source",
                 "source": false
               },
@@ -36,147 +22,21 @@
             }
           },
           {
-            "id": "52833bf188bd948c",
+            "id": "3166c59f36573770",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "hands-on/enterprise-rag/README.md",
+                "file": "hands-on/agentic-ai/mcp-inspector.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "6e60a60ad0ba9dd2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "e5d6bc7fede9afa9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "785c37abe8f6fc79",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "a20ff548d7a5e677",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "5101687d1fefea23",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "0d1ff23d43acfd7d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/role-based-access.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "role-based-access"
-            }
-          },
-          {
-            "id": "43e0acb02ad124fa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "d220c3daef54410c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "50bb9172612407bb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "hands-on/enterprise-rag/caching.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "caching"
+              "title": "mcp-inspector"
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -233,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 350.5
+    "width": 349.5
   },
   "right": {
     "id": "d8603a7846a9b6be",
@@ -249,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "hands-on/enterprise-rag/caching.md",
+                "file": "hands-on/agentic-ai/mcp-inspector.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -259,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for caching"
+              "title": "Backlinks for mcp-inspector"
             }
           },
           {
@@ -322,7 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 376.5
+    "width": 378.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -335,34 +195,36 @@
       "bases:Create new base": false
     }
   },
-  "active": "50bb9172612407bb",
+  "active": "3166c59f36573770",
   "lastOpenFiles": [
-    "hands-on/enterprise-rag/README.md",
-    "hands-on/enterprise-rag/token-tracking.md",
-    "hands-on/enterprise-rag/hallucination-detection.md",
-    "hands-on/enterprise-rag/code/rbac-rag.md",
-    "hands-on/enterprise-rag/role-based-access.md",
-    "pg-vector-store.md",
-    "hands-on/enterprise-rag/metadata-filtering.md",
-    "hands-on/enterprise-rag/code/metadata-filtering-graph.md",
-    "hands-on/enterprise-rag/code/knowledge-graph.md",
-    "metadada-filtering.md",
-    "hands-on/enterprise-rag/hybrid-search.md",
-    "hands-on/enterprise-rag/code/hybrid-search.md",
-    "hands-on/enterprise-rag/code/hybrid-search-rerank.md",
-    "hands-on/enterprise-rag/follow-up-questions.md",
-    "hands-on/enterprise-rag/code/streaming.md",
-    "hands-on/enterprise-rag/semantic-search.md",
-    "hands-on/enterprise-rag/code/semantic-search.md",
-    "hands-on/enterprise-rag/code/short-term-memory.md",
-    "hands-on/enterprise-rag/code/langgraph-streaming.md",
-    "hands-on/enterprise-rag/streaming-answers.md",
-    "hands-on/enterprise-rag/code/event-streaming.md",
-    "hands-on/enterprise-rag/conversation-memory.md",
     "hands-on/agentic-ai/README.md",
-    "hands-on/enterprise-rag/code/langgraph-memory.md",
-    "hands-on/enterprise-rag/code/long-term-memory.md",
-    "hands-on/enterprise-rag/code/memory-overview.md",
+    "hands-on/agentic-ai/mcp-inspector.md",
+    "hands-on/agentic-ai/code/custom-rag-agent.md",
+    "hands-on/agentic-ai/code/rag-agent.md",
+    "hands-on/agentic-ai/code/sql-agent.md",
+    "hands-on/agentic-ai/agent-runtime.md",
+    "hands-on/agentic-ai/sandbox.md",
+    "hands-on/agentic-ai/workflow-visualization.md",
+    "hands-on/agentic-ai/streaming-events.md",
+    "hands-on/agentic-ai/state.md",
+    "hands-on/agentic-ai/retry-logic.md",
+    "hands-on/agentic-ai/code/retry.md",
+    "code",
+    "hands-on/agentic-ai/code/mcp-tools.md",
+    "hands-on/agentic-ai/code/mcp.md",
+    "hands-on/agentic-ai/code/long-term-memory.md",
+    "hands-on/agentic-ai/code/memory.md",
+    "gen-ai/mcp/README.md",
+    "gen-ai/mcp/orchestration.md",
+    "hands-on/agentic-ai/code/guardrails.md",
+    "hands-on/agentic-ai/code/human-in-the-loop.md",
+    "hands-on/agentic-ai/code/interrupts.md",
+    "hands-on/agentic-ai/human-approval.md",
+    "hands-on/agentic-ai/mcp-support.md",
+    "hands-on/agentic-ai/code/streaming.md",
+    "hands-on/agentic-ai/code/langchain-tools.md",
+    "hands-on/agentic-ai/code/stores.md",
+    "hands-on/agentic-ai/code",
     "hands-on/enterprise-rag/code",
     "front-end/angular/ngrx",
     "front-end/angular/signals",
@@ -370,8 +232,6 @@
     "front-end/angular",
     "front-end",
     "hands-on/system-design",
-    "hands-on/agentic-ai",
-    "gen-ai/hands-on/enterprise-rag/Untitled",
-    "hands-on/enterprise-rag"
+    "hands-on/agentic-ai"
   ]
 }
